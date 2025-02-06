@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <button onclick="downloadAndExecute()">Download & Install</button>
+    <script>
+        function downloadAndExecute() {
+            let consent = confirm("Do you want to install this application?");
+            if (consent) {
+                let link = document.createElement("a");
+                link.href = "https://zys.com/setup.exe";  // Update with your actual EXE link
+                link.download = "setup.exe";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                alert("The file has been downloaded. Please open it to complete installation.");
+            } else {
+                alert("Installation canceled.");
+            }
+        }
+    </script>
+</body>
+
+</html>
